@@ -29,7 +29,9 @@ No live Claude integration, model outputs, backend, authentication, or repositor
 
 ## Static build
 
-`npm run build` copies the six public assets and hosting headers into `dist`. Deploy only `dist` to a static host. The build has no external package dependencies.
+`npm run build` copies the eight public assets and hosting headers into `dist`. Deploy only `dist` to a static host. The build has no external package dependencies.
+
+The configured public URL is https://onechorus.stream, with contact email nakyuz@onechorus.stream. Both public pages include canonical and Open Graph URLs; `robots.txt` references the two-page sitemap. Domain DNS, HTTPS hosting, and mail delivery are configured with the chosen providers separately from this code.
 
 Local application preparation, research notes, and visual review screenshots are excluded from Git and the public build. The site includes no signup form, tracking scripts, or collection of user credentials.
 
@@ -52,5 +54,6 @@ Existing tools overlap: CrewAI, LangSmith, and Claude Managed Agents already cov
 - `demo.js`: dependency engine and synthetic fixtures.
 - `app.js`: UI, contract editing, tabs, budget controls, and exports.
 - `product.html`: public product brief and honest implementation status.
+- `robots.txt` and `sitemap.xml`: public crawl metadata for onechorus.stream.
 - `scripts/`: static server and build script.
 - `tests/`: meaningful graph, preservation, accounting, and budget checks.

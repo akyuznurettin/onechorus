@@ -4,9 +4,9 @@ import { readFile, stat } from 'node:fs/promises';
 
 const root = path.resolve(process.argv[2] || '.');
 const port = Number(process.env.ONECHORUS_PORT || 4173);
-const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.json': 'application/json', '.png': 'image/png', '.txt': 'text/plain; charset=utf-8' };
+const types = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.svg': 'image/svg+xml', '.json': 'application/json', '.png': 'image/png', '.txt': 'text/plain; charset=utf-8', '.xml': 'application/xml; charset=utf-8' };
 // Only serve public assets, even when previewing from the project root.
-const allowed = new Set(['index.html', 'product.html', 'styles.css', 'app.js', 'demo.js', 'favicon.svg']);
+const allowed = new Set(['index.html', 'product.html', 'styles.css', 'app.js', 'demo.js', 'favicon.svg', 'robots.txt', 'sitemap.xml']);
 const server = http.createServer(async (req, res) => {
   if (!['GET', 'HEAD'].includes(req.method)) { res.writeHead(405); res.end(); return; }
   try {
